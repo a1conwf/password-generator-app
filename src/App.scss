@@ -1,0 +1,114 @@
+@use "./sass/variables" as *;
+@use "./sass/mixins" as *;
+@use "./sass/layout" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input,
+button {
+  font-family: "JetBrains Mono";
+}
+
+body {
+  min-height: 100vh;
+  @include flex(center, center);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  background-color: $veryDarkGrey;
+  color: $almostWhite;
+}
+
+h1 {
+  line-height: 40px;
+  text-align: center;
+  color: $grey;
+  margin-bottom: 16px;
+}
+
+.output {
+  min-width: 300px;
+  position: relative;
+  @include flex(space-between, center);
+  padding: 17px 16px 15px;
+  margin-bottom: 16px;
+  background-color: $darkGrey;
+
+  input {
+    max-width: 160px;
+    font-size: 24px;
+    line-height: 24px;
+    color: $almostWhite;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .copy {
+    display: flex;
+    gap: 10px;
+
+    p {
+      color: $neonGreen;
+      text-transform: uppercase;
+    }
+
+    svg {
+      cursor: pointer;
+
+      &:hover path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+@include md {
+  body {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 31px;
+  }
+
+  .output {
+    min-width: 540px;
+    padding: 19px 32px;
+    margin-bottom: 24px;
+
+    input {
+      max-width: 200px;
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    .copy {
+      gap: 15px;
+    }
+  }
+}
